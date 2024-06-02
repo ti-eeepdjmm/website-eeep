@@ -45,13 +45,13 @@ export default function MenuToggle() {
                         <a href="#home" className="block py-2">Início</a>
                     </li>
                     <li className="border-b border-white-600 w-full">
-                        <a href="#home" className="block py-2">Cursos</a>
+                        <a href="#cursos" className="block py-2">Cursos</a>
                     </li>
                     <li className="border-b border-white-600 w-full">
-                        <a href="#home" className="block py-2">Sobre</a>
+                        <a href="#sobre" className="block py-2">Sobre</a>
                     </li>
                     <li className="border-b border-white-600 w-full">
-                        <a href="#home" className="block py-2">Esportes</a>
+                        <a href="/esportes" className="block py-2">Esportes</a>
                     </li>
                 </ul>
             </nav>
