@@ -8,6 +8,7 @@ import Banner from '@/components/template/Banner'
 import Secao from '@/components/template/Secao'
 import TextoTitulo from '@/components/TextoTitulo'
 import CardSobre from '@/components/CardSobre'
+import Cursos from '@/components/Cursos'
 
 export default function Home() {
   return (
@@ -17,9 +18,13 @@ export default function Home() {
           <MenuToggle />
       </Cabecalho>
       <Banner inicio={false} />
-      <Secao className='bg-white'>
+      <Secao id="sobre" className='bg-white'>
         <TextoTitulo titulo='Nossa História' />
         <CardSobre />
+      </Secao>
+      <Secao id="cursos" className='bg-green-700 px-4'>
+          <TextoTitulo titulo='Cursos' white={true}/>
+          <Cursos />
       </Secao>
       <Rodape />
     </Pagina>
