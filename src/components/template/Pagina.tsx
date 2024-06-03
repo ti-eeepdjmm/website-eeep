@@ -1,4 +1,4 @@
-import { Kanit } from '@next/font/google'
+import { Kanit } from 'next/font/google'
 
 const kanit = Kanit({
   subsets: ['latin'],

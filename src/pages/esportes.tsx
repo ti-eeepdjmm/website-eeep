@@ -6,25 +6,32 @@ import Rodape from '@/components/template/Rodape'
 import Logo from '@/components/template/Logo'
 import Banner from '@/components/template/Banner'
 import Secao from '@/components/template/Secao'
-import TextoTitulo from '@/components/TextoTitulo'
-import CardSobre from '@/components/CardSobre'
-import Cursos from '@/components/Cursos'
+import MenuEsportes from '@/components/MenuEsportes'
+import { useState } from 'react'
+import Tabela from '@/components/Tabela'
 
-export default function Home() {
+export default function Esportes() {
+  const [clickTabela, setClickTabela] = useState(false);
+
   return (
     <Pagina>
       <Cabecalho>
           <Logo/>
           <MenuToggle />
       </Cabecalho>
-      <Banner inicio={true} />
-      <Secao id="sobre" className='bg-white px-4 py-4 gap-2'>
-        <TextoTitulo titulo='Nossa História' />
-        <CardSobre />
-      </Secao>
-      <Secao id="cursos" className='bg-green-700 p-4 gap-2'>
-          <TextoTitulo titulo='Cursos' white={true}/>
-          <Cursos />
+      <Banner inicio={false} />
+      <Secao className='px-0'>
+        <MenuEsportes 
+          texto='Tabela'
+          icone='table'
+          selecionado={clickTabela}
+          onClick={() => setClickTabela(!clickTabela)}
+        />
+        {clickTabela ?
+            <Tabela />
+            :
+            <></>
+        }
       </Secao>
       <Rodape />
     </Pagina>

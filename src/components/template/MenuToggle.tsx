@@ -42,7 +42,7 @@ export default function MenuToggle() {
             >
                 <ul className="w-full text-center">
                     <li className="border-b border-white-600 w-full">
-                        <a href="#home" className="block py-2">Início</a>
+                        <a href="/" className="block py-2">Início</a>
                     </li>
                     <li className="border-b border-white-600 w-full">
                         <a href="#cursos" className="block py-2">Cursos</a>
