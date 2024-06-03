@@ -17,12 +17,12 @@ export default function Home() {
           <Logo/>
           <MenuToggle />
       </Cabecalho>
-      <Banner inicio={false} />
-      <Secao id="sobre" className='bg-white'>
+      <Banner inicio={true} />
+      <Secao id="sobre" className='bg-white px-4 py-4 gap-2'>
         <TextoTitulo titulo='Nossa História' />
         <CardSobre />
       </Secao>
-      <Secao id="cursos" className='bg-green-700 px-4'>
+      <Secao id="cursos" className='bg-green-700 p-4 gap-2'>
           <TextoTitulo titulo='Cursos' white={true}/>
           <Cursos />
       </Secao>
