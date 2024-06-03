@@ -61,17 +61,26 @@ export default function Esportes({ tabela }:EsportesProps) {
             <CardEquipeOrg 
               nome='Richard'
               funcao='Assistente'
-              foto='sem-foto'
-              semFoto={true}
+              foto='richard'
             /> 
             <CardEquipeOrg 
               nome='Kauan'
               funcao='Assistente'
+              foto='kauan'
+            />
+            <CardEquipeOrg 
+              nome='Alisson'
+              funcao='Assistente'
+              foto='alisson'
+            /> 
+            <CardEquipeOrg 
+              nome='Artur'
+              funcao='Socorrista'
               foto='sem-foto'
               semFoto={true}
             /> 
             <CardEquipeOrg 
-              nome='Artur'
+              nome='Jordana'
               funcao='Socorrista'
               foto='sem-foto'
               semFoto={true}
