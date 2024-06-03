@@ -19,6 +19,7 @@ export default function Jogador({ posicao, nome, time, estatistica, foto }:Props
                         height={48}
                         width={48}
                         alt="foto"
+                        className="rounded-full border-2 border-gray-400"
                     />
                     <div>
                         <div className="text-base">{nome}</div>
