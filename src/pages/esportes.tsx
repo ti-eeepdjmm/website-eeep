@@ -9,8 +9,13 @@ import Secao from '@/components/template/Secao'
 import MenuEsportes from '@/components/MenuEsportes'
 import { useState } from 'react'
 import Tabela from '@/components/Tabela'
+import { Time } from '@/types/types'
 
-export default function Esportes() {
+interface EsportesProps {
+  tabela: Time[];
+}
+
+export default function Esportes({ tabela }:EsportesProps) {
   const [clickTabela, setClickTabela] = useState(false);
 
   return (
@@ -28,7 +33,7 @@ export default function Esportes() {
           onClick={() => setClickTabela(!clickTabela)}
         />
         {clickTabela ?
-            <Tabela />
+            <Tabela tabela={tabela}/>
             :
             <></>
         }
@@ -36,4 +41,16 @@ export default function Esportes() {
       <Rodape />
     </Pagina>
   )
+}
+
+// Estratégia de SSR para buscar dados da API na rederização da página
+export async function getServerSideProps() {
+  const res = await fetch('https://api-interclasses-app.vercel.app/api/tabela');
+  const tabela = await res.json();
+
+  return {
+      props: {
+          tabela,
+      },
+  };
 }
