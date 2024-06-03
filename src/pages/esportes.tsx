@@ -10,6 +10,8 @@ import MenuEsportes from '@/components/MenuEsportes'
 import { useState } from 'react'
 import Tabela from '@/components/Tabela'
 import { Time } from '@/types/types'
+import TextoTitulo from '@/components/TextoTitulo'
+import CardEquipeOrg from '@/components/CardEquipeOrg'
 
 interface EsportesProps {
   tabela: Time[];
@@ -37,6 +39,44 @@ export default function Esportes({ tabela }:EsportesProps) {
             :
             <></>
         }
+      </Secao>
+      <Secao className='px-2 py-4 gap-4'>
+        <TextoTitulo titulo='Equipe de Organização'/>
+        <div className='flex justify-center flex-wrap items-center gap-2 w-full'>
+            <CardEquipeOrg 
+              nome='Prof. Vanessa'
+              funcao='Coordenadora'
+              foto='vanessa'
+            />
+            <CardEquipeOrg 
+              nome='Prof. Kariny'
+              funcao='Arbitragem'
+              foto='kariny'
+            />  
+            <CardEquipeOrg 
+              nome='Prof. Henrique'
+              funcao='Arbitragem'
+              foto='rick'
+            /> 
+            <CardEquipeOrg 
+              nome='Richard'
+              funcao='Assistente'
+              foto='sem-foto'
+              semFoto={true}
+            /> 
+            <CardEquipeOrg 
+              nome='Kauan'
+              funcao='Assistente'
+              foto='sem-foto'
+              semFoto={true}
+            /> 
+            <CardEquipeOrg 
+              nome='Artur'
+              funcao='Socorrista'
+              foto='sem-foto'
+              semFoto={true}
+            /> 
+        </div>
       </Secao>
       <Rodape />
     </Pagina>
