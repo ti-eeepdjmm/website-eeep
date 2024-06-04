@@ -26,4 +26,34 @@ export interface Cartoes {
     time: string;
     cartoes: number;
     foto: string
+}
+
+  export interface Partidas {
+    _id?: any;
+    timeA: string;
+    timeB: string;
+    placarA: number;
+    placarB: number;
+    data: string;
+    hora: string;
+    finalizado: boolean;
+    vencedor: string;
+  }
+
+  export interface Confrontos{
+      _id: "",
+      temporada: 0,
+      rodadas: {
+        grupos: [[
+          partida:Partidas,
+          partida:Partidas,
+          partida:Partidas,
+          partida:Partidas,
+          partida:Partidas,
+        ]],
+        finais: [{
+          fase:string,
+          jogos:[]
+        }]
+      }
   }
