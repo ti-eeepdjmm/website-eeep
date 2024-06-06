@@ -9,21 +9,24 @@ import Secao from '@/components/template/Secao'
 import MenuEsportes from '@/components/MenuEsportes'
 import { useState } from 'react'
 import Tabela from '@/components/Tabela'
-import { Cartoes, Gols, Time } from '@/types/types'
+import { Cartoes, Confrontos, Gols, Time } from '@/types/types'
 import TextoTitulo from '@/components/TextoTitulo'
 import CardEquipeOrg from '@/components/CardEquipeOrg'
 import Estatisticas from '@/components/Estatisticas'
+import Rodadas from '@/components/Rodadas'
 
 interface EsportesProps {
   tabela: Time[];
   gols: Gols[];
   cartoesAmarelos: Cartoes[];
   cartoesVermelhos: Cartoes[];
+  confrontos:Confrontos;
 }
 
-export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelhos }: EsportesProps) {
+export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelhos, confrontos }: EsportesProps) {
   const [clickTabela, setClickTabela] = useState(false);
   const [clickEstatistica, setclickEstatistica] = useState(false);
+  const [clickRodadas, setclickRodadas] = useState(false);
 
   return (
     <Pagina>
@@ -58,6 +61,18 @@ export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelh
             cartoesAmarelos={cartoesAmarelos}
             cartoesVermelhos={cartoesVermelhos}
           />
+          :
+          <></>
+        }
+
+        <MenuEsportes
+          texto='Rodadas'
+          icone='calendar'
+          selecionado={clickRodadas}
+          onClick={() => setclickRodadas(!clickRodadas)}
+        />
+        {clickRodadas ?
+          <Rodadas confrontos={confrontos} />
           :
           <></>
         }
@@ -128,12 +143,17 @@ export async function getServerSideProps() {
   const cartoesAmarelos = estatisticas.cartoes_amarelos;
   const cartoesVermelhos = estatisticas.cartoes_vermelhos;
 
+  // busca dados das rodas
+  const dataConfrontos = await fetch('https://api-interclasses-app.vercel.app/api/partidas');
+  const confrontos = await dataConfrontos.json();
+
   return {
     props: {
       tabela,
       gols,
       cartoesAmarelos,
       cartoesVermelhos,
+      confrontos,
     },
   };
 }
