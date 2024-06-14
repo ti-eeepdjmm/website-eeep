@@ -27,6 +27,7 @@ export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelh
   const [clickTabela, setClickTabela] = useState(false);
   const [clickEstatistica, setclickEstatistica] = useState(false);
   const [clickRodadas, setclickRodadas] = useState(false);
+  const [clickEquipes, setclickEquipes] = useState(false);
 
   return (
     <Pagina>
@@ -76,6 +77,12 @@ export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelh
           :
           <></>
         }
+        <MenuEsportes
+          texto='Equipes'
+          icone='shield'
+          selecionado={clickEquipes}
+          onClick={() => setclickEquipes(!clickEquipes)}
+        />
       </Secao>
       {/* Seção equipe de organização */}
       <Secao className='px-2 py-4 gap-4'>
