@@ -15,7 +15,7 @@ import CardEquipeOrg from '@/components/CardEquipeOrg'
 import Estatisticas from '@/components/Estatisticas'
 import Rodadas from '@/components/Rodadas'
 import MenuEquipe from '@/components/MenuEquipe'
-import CardEquipes from '@/components/CardEquipes'
+import CardEquipes from '@/components/CardEscalacao'
 
 interface EsportesProps {
   tabela: Time[];
@@ -90,9 +90,7 @@ export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelh
           onClick={() => setclickEquipes(!clickEquipes)}
         />
         {clickEquipes ?
-          <CardEquipes 
-            equipes={[]}
-          />
+          <></>
           :
           <></>
         }
