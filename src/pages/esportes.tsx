@@ -9,13 +9,13 @@ import Secao from '@/components/template/Secao'
 import MenuEsportes from '@/components/MenuEsportes'
 import { useState } from 'react'
 import Tabela from '@/components/Tabela'
-import { Cartoes, Confrontos, Gols, Time } from '@/types/types'
+import { Cartoes, Confrontos, Gols, Time, Equipe } from '@/types/types'
 import TextoTitulo from '@/components/TextoTitulo'
 import CardEquipeOrg from '@/components/CardEquipeOrg'
 import Estatisticas from '@/components/Estatisticas'
 import Rodadas from '@/components/Rodadas'
-import MenuEquipe from '@/components/MenuEquipe'
-import CardEquipes from '@/components/CardEscalacao'
+import CardEquipes from '@/components/CardEquipes'
+
 
 interface EsportesProps {
   tabela: Time[];
@@ -23,9 +23,10 @@ interface EsportesProps {
   cartoesAmarelos: Cartoes[];
   cartoesVermelhos: Cartoes[];
   confrontos:Confrontos;
+  equipes: Array<Equipe>;
 }
 
-export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelhos, confrontos }: EsportesProps) {
+export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelhos, confrontos, equipes }: EsportesProps) {
   const [clickTabela, setClickTabela] = useState(false);
   const [clickEstatistica, setclickEstatistica] = useState(false);
   const [clickRodadas, setclickRodadas] = useState(false);
@@ -90,7 +91,9 @@ export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelh
           onClick={() => setclickEquipes(!clickEquipes)}
         />
         {clickEquipes ?
-          <></>
+          <CardEquipes
+            equipes={equipes} 
+          />
           :
           <></>
         }
@@ -165,6 +168,11 @@ export async function getServerSideProps() {
   const dataConfrontos = await fetch('https://api-interclasses-app.vercel.app/api/partidas');
   const confrontos = await dataConfrontos.json();
 
+  // busca dados das equipes
+  const dataEquipes = await fetch('https://api-interclasses-app.vercel.app/api/equipes');
+  const equipesTemporada = await dataEquipes.json();
+  const equipes = equipesTemporada.equipes
+
   return {
     props: {
       tabela,
@@ -172,6 +180,7 @@ export async function getServerSideProps() {
       cartoesAmarelos,
       cartoesVermelhos,
       confrontos,
+      equipes,
     },
   };
 }
