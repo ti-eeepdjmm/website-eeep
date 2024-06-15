@@ -21,7 +21,7 @@ export default function CardEquipes({ equipes }:CardProps){
                   <>
                     <MenuEquipe 
                        icone={equipe.nome}
-                       selecionado={activeIndex != null} 
+                       selecionado={activeIndex === index} 
                        texto={equipe.nome}
                        key={index}
                        onClick={() => handleMenuClick(index)}
