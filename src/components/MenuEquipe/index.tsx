@@ -8,8 +8,9 @@ interface MenuProps{
 }
 
 export default function MenuEquipe(props:MenuProps){
-    const icone = `/logos/${props.icone.toLocaleLowerCase().substring(3,)}-logo.svg`;
-    console.log(icone);
+    const icone = `/logos/${props.icone.toLocaleLowerCase() == `adm`? 
+                            props.icone.toLocaleLowerCase():
+                            props.icone.toLocaleLowerCase().substring(3,)}-logo.svg`;
     return(
         <div 
             className={`

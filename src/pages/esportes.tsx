@@ -139,7 +139,7 @@ export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelh
             semFoto={true}
           />
           <CardEquipeOrg
-            nome='Jordana'
+            nome='Joana Darc'
             funcao='Socorrista'
             foto='sem-foto'
             semFoto={true}

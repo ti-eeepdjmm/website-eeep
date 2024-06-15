@@ -13,21 +13,22 @@ export default function CardEquipeOrg({ nome, foto, funcao, semFoto }:CardProps)
             flex flex-col items-center justify-center p-4 gap-0 
             shadow-md shadow-gray-500 rounded-lg w-40 h-44
         `}>
-            <div className="rounded-full overflow-hidden h-24 w-24 flex items-center justify-center border-2 border-green-700">
+            <div className="rounded-full overflow-hidden h-24 w-24 flex items-start justify-center border-2 border-green-700">
                 {semFoto ? 
                     <Image 
                         src={`/fotos/organizacao/${foto}.jpg`}
                         alt="foto da equipe"
                         width={40}
                         height={40}
+                        className="mt-6"
                     />
                     :
                     <Image 
                         src={`/fotos/organizacao/${foto}.jpg`}
                         alt="foto da equipe"
-                        width={104}
-                        height={104}
-                        className="w-full h-full"
+                        width={100}
+                        height={100}
+                        className="min-w-32"
                     />
                 }
                 

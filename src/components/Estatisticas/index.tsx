@@ -19,7 +19,7 @@ export default function Estatisticas({ gols, cartoesAmarelos, cartoesVermelhos }
                         time={jogador.time}
                         posicao={index + 1}
                         estatistica={jogador.gols}
-                        foto={jogador.foto.trim().length > 0 ? `/fotos/jogadores/${jogador.foto}.jpg` : '/icons/foto-icon.svg'}
+                        foto={jogador.foto.trim().length > 0 ? `/fotos/jogadores/${jogador.time}/${jogador.foto}.png` : '/icons/foto-icon.svg'}
                     />)}
             </Card>
             <Card titulo='Cartões Amarelos'>
@@ -30,7 +30,7 @@ export default function Estatisticas({ gols, cartoesAmarelos, cartoesVermelhos }
                         time={jogador.time}
                         posicao={index + 1}
                         estatistica={jogador.cartoes}
-                        foto={jogador.foto.trim().length > 0 ? `/fotos/jogadores/${jogador.foto}.jpg` : '/icons/foto-icon.svg'}
+                        foto={jogador.foto.trim().length > 0 ? `/fotos/jogadores/${jogador.time}/${jogador.foto}.png` : '/icons/foto-icon.svg'}
                     />)}
             </Card>
             <Card titulo='Cartões Vermelhos'>
@@ -41,7 +41,7 @@ export default function Estatisticas({ gols, cartoesAmarelos, cartoesVermelhos }
                         time={jogador.time}
                         posicao={index + 1}
                         estatistica={jogador.cartoes}
-                        foto={jogador.foto.trim().length > 0 ? `/fotos/jogadores/${jogador.foto}.jpg` : '/icons/foto-icon.svg'}
+                        foto={jogador.foto.trim().length > 0 ? `/fotos/jogadores/${jogador.time}/${jogador.foto}.png` : '/icons/foto-icon.svg'}
                     />)}
             </Card>
         </div>
