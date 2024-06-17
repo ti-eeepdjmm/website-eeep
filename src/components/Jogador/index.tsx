@@ -9,18 +9,21 @@ interface Props{
     foto: string;
 }
 export default function Jogador({ posicao, nome, time, estatistica, foto }:Props){
+    console.log(foto)
     return(
-        <div className="flex flex-col justify-between h-14 md:hover:bg-gray-50 md:cursor-pointer">
+        <div className="flex flex-col justify-between h-16 md:hover:bg-gray-50 md:cursor-pointer">
             <div className="flex justify-between items-center px-1">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-3">
                     <div className="text-sm md:text-base">{posicao}º</div>
-                    <Image
-                        src={foto}
-                        height={48}
-                        width={48}
-                        alt="foto"
-                        className="rounded-full border-2 border-gray-400"
-                    />
+                    <div className=" flex items-start justify-center rounded-full border-2 border-gray-400 w-16 h-16 overflow-hidden">
+                        <Image
+                            src={foto}
+                            height={100}
+                            width={100}
+                            alt="foto"
+                            className={`${foto != `/icons/foto-icon.svg`? `-mt-4`: ``} max-w-5xl`}
+                        />
+                    </div>
                     <div>
                         <div className="text-base">{nome}</div>
                         <div className="flex items-center gap-2">
@@ -35,7 +38,7 @@ export default function Jogador({ posicao, nome, time, estatistica, foto }:Props
                 </div>
                 <div className="text-sm md:text-base">{estatistica}</div>
             </div>
-            <hr className="border-1 border-gray-300 w-full" />
+            <hr className="border-1 border-gray-300 w-full mt-1" />
         </div>
     )
 }

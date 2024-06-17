@@ -57,3 +57,22 @@ export interface Cartoes {
         }]
       }
   }
+
+  export interface Equipes{
+    _id?:any;
+    temporada:number;
+    equipes:[];
+}
+
+export interface Equipe{
+    nome:string;
+    escalacao:Array<Jogador>;
+}
+
+export interface Jogador{
+    nome:string;
+    foto:string;
+    goleiro:boolean;
+    capitao:boolean;
+}
+
