@@ -14,7 +14,7 @@ export default function Banner(props:PropsBanner) {
     return (
       
         <div id="banner" className={`
-            bg-green-700 flex flex-col h-48
+            bg-green-700 flex flex-col h-48 md:h-96
         `}>
 
             {paginaInicial ?
@@ -22,11 +22,11 @@ export default function Banner(props:PropsBanner) {
                     <Image
                         src={imagemEP}
                         alt='banner do site'
-                        className="h-full"
+                        className="md:-mt-8"
                     />
-                    <div className="-mt-32 text-center text-white">
-                        <h2 className="font-bold text-2xl">Bem vindo!</h2>
-                        <p className="">Sua estrada para protagonizar uma história de sucesso começa aqui.</p>
+                    <div className="-mt-32 md:absolute md:top-96 w-full text-center text-white">
+                        <h2 className="font-bold text-2xl md:text-4xl">Bem vindo!</h2>
+                        <p className="md:text-lg">Sua estrada para protagonizar uma história de sucesso começa aqui.</p>
                     </div>
                 </>
                 :

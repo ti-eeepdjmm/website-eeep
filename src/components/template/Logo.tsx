@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Logo() {
     return (
-        <div className="flex justify-between w-full md:px-10">
+        <div className="flex justify-between w-full md:px-0">
             <Link href="/">
             <div className='flex items-center'>
                     <Image
@@ -12,11 +12,13 @@ export default function Logo() {
                         height={68}
                         width={68}
                         alt='logo do site'
-                        className='md:h-full md:w-44'
+                        className='md:h-full md:w-28'
                     />
                     <span className={`
                         text-white font-bold text-base
-                    `}>EEEPDJMM</span>
+                    `}>
+                        EEEPDJMM
+                    </span>
             </div>
             </Link>
         </div>

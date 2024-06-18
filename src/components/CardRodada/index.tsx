@@ -16,7 +16,7 @@ export default function CardRodada({ children, rodada, totalRodadas, finais}:Car
             </h1>
             <div className={`
                 flex flex-col md:grid md:grid-cols-2
-                text-sm  text-gray-500 md:gap-3 md:grid-rows-3
+                text-sm gap-2 text-gray-500 md:gap-3 md:grid-rows-3
             `}>
                 {children}
             </div>

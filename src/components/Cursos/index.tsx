@@ -30,8 +30,8 @@ const cursos = [
 
 export default function Cursos(){
     return(
-        <div className="flex flex-col gap-4 items-center justify-center">
-            <p className="text-center text-white">
+        <div className="md:grid md:grid-cols-2 flex flex-col gap-4 items-center justify-center">
+            <p className="text-center text-white md:col-span-2">
                 A Escola Estadual de Educação Profissional Deputado José Maria Melo 
                 oferece atualmente quatro cursos técnicos que preparam os alunos para diversas áreas profissionais.   
             </p>
