@@ -14,8 +14,10 @@ export default function MenuEsportes(props:MenuProps){
         <div 
             className={`
                 bg-green-700 flex items-center transition-all duration-300
-                justify-between gap-2 w-full px-4 py-1 border-b-2
+                justify-between gap-2 w-full px-4 py-1 border-b-2 md:cursor-pointer
                 ${props.selecionado ? 'bg-green-800':''}
+                md:hover:bg-green-800 md:h-16 md:border-r-2 md:justify-center
+                relative
             `}
             onClick={props.onClick}
         >
@@ -36,6 +38,7 @@ export default function MenuEsportes(props:MenuProps){
                 className={`
                     transition-all duration-300
                     ${props.selecionado ? 'rotate-90':''}
+                    md:hidden
                 `}
             /> 
         </div>

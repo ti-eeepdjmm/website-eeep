@@ -22,7 +22,7 @@ interface EsportesProps {
   gols: Gols[];
   cartoesAmarelos: Cartoes[];
   cartoesVermelhos: Cartoes[];
-  confrontos:Confrontos;
+  confrontos: Confrontos;
   equipes: Array<Equipe>;
 }
 
@@ -32,10 +32,6 @@ export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelh
   const [clickRodadas, setclickRodadas] = useState(false);
   const [clickEquipes, setclickEquipes] = useState(false);
 
-  // menus escalação
-  const [clickEquipe1, setClickEquipe1] = useState(false);
-  const [clickEquipe2, setClickEquipe2] = useState(false);
-
   return (
     <Pagina>
       <Cabecalho>
@@ -44,7 +40,7 @@ export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelh
       </Cabecalho>
       <Banner inicio={false} />
       {/* Secão dos esportes */}
-      <Secao className='px-0'>
+      <Secao className='px-0 md:flex-row'>
         <MenuEsportes
           texto='Tabela'
           icone='table'
@@ -52,7 +48,9 @@ export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelh
           onClick={() => setClickTabela(!clickTabela)}
         />
         {clickTabela ?
-          <Tabela tabela={tabela} />
+          <div className='md:hidden'>
+            <Tabela tabela={tabela} />
+          </div>
           :
           <></>
         }
@@ -64,11 +62,13 @@ export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelh
           onClick={() => setclickEstatistica(!clickEstatistica)}
         />
         {clickEstatistica ?
-          <Estatisticas
-            gols={gols}
-            cartoesAmarelos={cartoesAmarelos}
-            cartoesVermelhos={cartoesVermelhos}
-          />
+          <div className='md:hidden'>
+            <Estatisticas
+              gols={gols}
+              cartoesAmarelos={cartoesAmarelos}
+              cartoesVermelhos={cartoesVermelhos}
+            />
+          </div>
           :
           <></>
         }
@@ -80,7 +80,9 @@ export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelh
           onClick={() => setclickRodadas(!clickRodadas)}
         />
         {clickRodadas ?
-          <Rodadas confrontos={confrontos} />
+          <div className='md:hidden'>
+            <Rodadas confrontos={confrontos} />
+          </div>
           :
           <></>
         }
@@ -91,12 +93,35 @@ export default function Esportes({ tabela, gols, cartoesAmarelos, cartoesVermelh
           onClick={() => setclickEquipes(!clickEquipes)}
         />
         {clickEquipes ?
-          <CardEquipes
-            equipes={equipes} 
-          />
+          <div className='md:hidden'>
+            <CardEquipes
+              equipes={equipes}
+            />
+          </div>
           :
           <></>
         }
+      </Secao>
+      <Secao>
+        <div className='w-full hidden md:flex md:px-64'>
+          {clickTabela ?
+            <Tabela tabela={tabela} />
+            :clickEstatistica ?
+              <Estatisticas
+                gols={gols}
+                cartoesAmarelos={cartoesAmarelos}
+                cartoesVermelhos={cartoesVermelhos}
+              />
+            :clickRodadas ?
+              <Rodadas confrontos={confrontos} />
+            :clickEquipes ?
+              <CardEquipes
+                equipes={equipes}
+              />
+            :
+            <></>
+          }
+        </div>
       </Secao>
       {/* Seção equipe de organização */}
       <Secao className='px-2 py-4 gap-4'>
