@@ -13,7 +13,10 @@ interface PropsCurso{
 export default function CardCurso(props:PropsCurso){
     const logoCurso = `/logos/${props.logo}`
     return(
-        <div className="flex flex-col items-center justify-center bg-white shadow-md shadow-green-950 rounded-lg p-4">
+        <div className={`
+                flex flex-col items-center justify-center bg-white shadow-md 
+                shadow-green-950 rounded-lg p-4 md:h-64
+                `}>
             <Image 
                 src={logoCurso}
                 alt="logo do curso"
