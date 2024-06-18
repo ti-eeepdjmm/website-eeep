@@ -11,14 +11,14 @@ export default function MenuToggle() {
     const abreMenu = () => setAberto(!aberto)
 
     return (
-        <div className="">
-            <div className='' onClick={abreMenu}>
+        <div className="md:w-full md:flex overflow-hidden md:justify-end">
+            <div className='md:hidden' onClick={abreMenu}>
                   {aberto ? 
                     <Image
                         src={closeIcon}
                         height={32}
                         width={32}
-                        alt='logo do site'
+                        alt='botão fechar'
                         className=' bg-green-800 transition-all duration-700 md:h-full md:w-44'
                     /> 
                     : 
@@ -33,24 +33,32 @@ export default function MenuToggle() {
                   }  
             </div>
             <nav
-                className={
-                    `absolute top-16 right-0 w-32 bg-green-800 text-white 
+                className={`
+                    absolute top-16 right-0 w-32 bg-green-800 text-white 
                     flex flex-col items-center transition-transform duration-700 transform 
-                    ${aberto ? 'translate-x-0' : 'translate-x-64'
-                    }`
-                }
+                    
+                    ${aberto ? 'translate-x-0' : 'translate-x-64'}
+                     
+                    md:relative md:top-0 md:bg-green-700 md:w-96
+                    md:translate-x-0
+
+                    `}
             >
-                <ul className="w-full text-center">
-                    <li className="border-b border-white-600 w-full">
+                <ul className={`
+                                flex flex-col md:flex-row w-full 
+                                md:text-base text-center
+                                
+                `}>
+                    <li className="md:border-0 border-b border-white-600 hover:text-yellow-400 w-full transition-all duration-200">
                         <a href="/" className="block py-2">Início</a>
                     </li>
-                    <li className="border-b border-white-600 w-full">
-                        <a href="#cursos" className="block py-2">Cursos</a>
+                    <li className="md:border-0 border-b border-white-600 hover:text-yellow-400 w-full transition-all duration-200">
+                        <a href="/#cursos" className="block py-2">Cursos</a>
                     </li>
-                    <li className="border-b border-white-600 w-full">
-                        <a href="#sobre" className="block py-2">Sobre</a>
+                    <li className="md:border-0 border-b border-white-600 hover:text-yellow-400 w-full transition-all duration-200">
+                        <a href="/#sobre" className="block py-2">Sobre</a>
                     </li>
-                    <li className="border-b border-white-600 w-full">
+                    <li className="md:border-0 border-b border-white-600 hover:text-yellow-400 w-full transition-all duration-200">
                         <a href="/esportes" className="block py-2">Esportes</a>
                     </li>
                 </ul>
