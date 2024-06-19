@@ -46,16 +46,16 @@ export default function Rodape() {
                                 md:text-base text-center font-semibold           
                 `}>
                     <li className="md:border-0 border-b border-white-600 hover:text-yellow-400 w-full transition-all duration-200">
-                        <a href="/" className="block">Início</a>
+                        <Link href="/" className="block">Início</Link>
                     </li>
                     <li className="md:border-0 border-b border-white-600 hover:text-yellow-400 w-full transition-all duration-200">
-                        <a href="/#cursos" className="block">Cursos</a>
+                        <Link href="/#cursos" className="block">Cursos</Link>
                     </li>
                     <li className="md:border-0 border-b border-white-600 hover:text-yellow-400 w-full transition-all duration-200">
-                        <a href="/#sobre" className="block">Sobre</a>
+                        <Link href="/#sobre" className="block">Sobre</Link>
                     </li>
                     <li className="md:border-0 border-b border-white-600 hover:text-yellow-400 w-full transition-all duration-200">
-                        <a href="/esportes" className="block">Esportes</a>
+                        <Link href="/esportes" className="block">Esportes</Link>
                     </li>
                 </ul>
             </div>
