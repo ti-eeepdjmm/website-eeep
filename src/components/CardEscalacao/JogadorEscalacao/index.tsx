@@ -11,7 +11,7 @@ export default function JogadorEscalacao({ time, jogador }:CardProps){
     return(
         <div className={`
             flex items-center justify-between w-full bg-white shadow-md shadow-slate-500
-            px-2 h-20
+            px-2 h-20 md:w-60
         `}>
             <div className="flex gap-2 items-center">
                 <div className="rounded-full border-2 border-gray-400 h-16 w-16 flex items-start justify-center overflow-hidden">

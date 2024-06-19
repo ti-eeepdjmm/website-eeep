@@ -14,7 +14,7 @@ export default function Banner(props:PropsBanner) {
     return (
       
         <div id="banner" className={`
-            bg-green-700 flex flex-col h-48 md:h-96
+            bg-green-700 flex flex-col h-48 md:h-96 overflow-hidden
         `}>
 
             {paginaInicial ?
@@ -34,11 +34,11 @@ export default function Banner(props:PropsBanner) {
                     <Image
                         src={imagemInterclasse}
                         alt='banner do site'
-                        className='h-full'
+                        className='md:-mt-40 md:w-1/1'
                     />
-                    <div className="-mt-32 text-center text-white">
-                        <h2 className="font-bold text-2xl">Inteclasses</h2>
-                        <p className="px-8 text-xs">O maior campeonato de jogos interclasse da região da Ibiapaba, nessa batalha 
+                    <div className="-mt-32 md:absolute md:top-96 w-full text-center text-white">
+                        <h2 className="font-bold text-2xl md:text-4xl">Inteclasses</h2>
+                        <p className="px-8 text-xs md:text-lg">O maior campeonato de jogos interclasse da região da Ibiapaba, nessa batalha 
                         só o melhores times avançam e apenas um se sagra campeão!</p>
                     </div>
                 </>

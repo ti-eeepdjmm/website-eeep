@@ -15,7 +15,7 @@ export default function CardEquipes({ equipes }:CardProps){
     };
 
     return(
-        <div className="flex flex-col gap-2 p-2 w-full bg-gray-200">
+        <div className="flex flex-col gap-2 p-2 w-full bg-gray-200 md:bg-gray-100">
             {
                 equipes.map((equipe, index) => 
                   <>
