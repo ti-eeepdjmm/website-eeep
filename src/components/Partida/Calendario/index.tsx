@@ -1,4 +1,4 @@
-import { Datas } from "../../../logic/utils/Datas.ts"
+import { Datas } from "../../../logic/utils/Datas"
 interface Props {
     data: string;
     hora: string;
