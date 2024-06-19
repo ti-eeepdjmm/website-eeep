@@ -14,9 +14,9 @@ export default function MenuEquipe(props:MenuProps){
     return(
         <div 
             className={`
-                bg-white flex items-center text-black transition-all duration-300 h-9
-                justify-between gap-2 w-full px-4 py-1 border-b-2 shadow-md shadow-slate-300
-                ${props.selecionado ? 'bg-slate-200':''}
+                bg-white flex items-center text-black transition-all duration-300 h-9 md:h-12
+                justify-between gap-2 w-full px-4 py-1 border-b-2 shadow-md shadow-slate-300 cursor-pointer
+                ${props.selecionado ? 'bg-gray-300':''}
             `}
             onClick={props.onClick}
         >

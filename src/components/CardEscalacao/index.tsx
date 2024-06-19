@@ -9,7 +9,7 @@ interface CardProps{
 
 export default function CardEscalacao({ nome, escalacao }:CardProps){
     return(
-        <div className="flex flex-col w-full p-2 gap-2">
+        <div className="flex flex-col w-full p-2 gap-2 md:flex-row md:flex-wrap justify-center">
             {
                 escalacao.map((jogador, index) => 
                   <JogadorEscalacao
