@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import barsIcon from '../../../public/icons/bars.svg'
 import closeIcon from '../../../public/icons/close.svg'
 import Image from 'next/image'
@@ -50,16 +51,16 @@ export default function MenuToggle() {
                                 
                 `}>
                     <li className="md:border-0 border-b border-white-600 hover:text-yellow-400 w-full transition-all duration-200">
-                        <a href="/" className="block py-2">Início</a>
+                        <Link href="/" className="block py-2">Início</Link>
                     </li>
                     <li className="md:border-0 border-b border-white-600 hover:text-yellow-400 w-full transition-all duration-200">
-                        <a href="/#cursos" className="block py-2">Cursos</a>
+                        <Link href="/#cursos" className="block py-2">Cursos</Link>
                     </li>
                     <li className="md:border-0 border-b border-white-600 hover:text-yellow-400 w-full transition-all duration-200">
-                        <a href="/#sobre" className="block py-2">Sobre</a>
+                        <Link href="/#sobre" className="block py-2">Sobre</Link>
                     </li>
                     <li className="md:border-0 border-b border-white-600 hover:text-yellow-400 w-full transition-all duration-200">
-                        <a href="/esportes" className="block py-2">Esportes</a>
+                        <Link href="/esportes" className="block py-2">Esportes</Link>
                     </li>
                 </ul>
             </nav>
