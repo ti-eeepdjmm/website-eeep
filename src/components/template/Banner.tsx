@@ -14,7 +14,8 @@ export default function Banner(props:PropsBanner) {
     return (
       
         <div id="banner" className={`
-            bg-green-700 flex flex-col h-48 md:h-96 overflow-hidden
+            bg-green-700 flex flex-col h-48 md:h-[40rem] overflow-hidden
+            relative
         `}>
 
             {paginaInicial ?
@@ -24,9 +25,12 @@ export default function Banner(props:PropsBanner) {
                         alt='banner do site'
                         className="md:-mt-8"
                     />
-                    <div className="-mt-32 md:absolute md:top-96 w-full text-center text-white">
-                        <h2 className="font-bold text-2xl md:text-4xl">Bem vindo!</h2>
-                        <p className="md:text-lg">Sua estrada para protagonizar uma história de sucesso começa aqui.</p>
+                    <div className={`
+                        absolute w-full h-full text-center text-white
+                        flex flex-col justify-center gap-3
+                    `}>
+                        <h2 className="font-bold text-2xl md:text-5xl">Bem vindo!</h2>
+                        <p className="md:text-2xl">Sua estrada para protagonizar uma história de sucesso começa aqui.</p>
                     </div>
                 </>
                 :
@@ -36,9 +40,12 @@ export default function Banner(props:PropsBanner) {
                         alt='banner do site'
                         className='md:-mt-40 md:w-1/1'
                     />
-                    <div className="-mt-32 md:absolute md:top-96 w-full text-center text-white">
-                        <h2 className="font-bold text-2xl md:text-4xl">Inteclasses</h2>
-                        <p className="px-8 text-xs md:text-lg">O maior campeonato de jogos interclasse da região da Ibiapaba, nessa batalha 
+                   <div className={`
+                        absolute w-full h-full text-center text-white
+                        flex flex-col justify-center gap-3 md:px-60
+                    `}>
+                        <h2 className="font-bold text-2xl md:text-5xl">Interclasses</h2>
+                        <p className="px-8 text-xs md:text-2xl">O maior campeonato de jogos interclasse da região da Ibiapaba, nessa batalha 
                         só o melhores times avançam e apenas um se sagra campeão!</p>
                     </div>
                 </>
