@@ -2,7 +2,7 @@
 export default function CardSobre() {
    
     return (
-        <div className="flex flex-col gap-2 md:gap-6 text-center">
+        <div className="flex flex-col gap-2 md:gap-16 text-center md:text-xl">
             <p>
                 A Escola Estadual de Educação Profissional Deputado José Maria Melo, localizada em Guaraciaba do Norte, 
                 Ceará, é uma instituição de destaque na formação técnica e no ensino médio. Fundada em 2017, a escola 

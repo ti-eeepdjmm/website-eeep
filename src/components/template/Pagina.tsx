@@ -1,4 +1,5 @@
 import { Kanit } from 'next/font/google'
+import { Analytics } from "@vercel/analytics/react"
 
 const kanit = Kanit({
   subsets: ['latin'],
@@ -20,6 +21,7 @@ export default function Pagina(props: PaginaProps) {
                 ${kanit.className ?? ''}
         `}>
             {props.children}
+            <Analytics />
         </div>
     )
 }
