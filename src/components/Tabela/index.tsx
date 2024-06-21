@@ -98,6 +98,14 @@ export default function Tabela({ tabela }:TabelaProps) {
                                     titulo=""
                                     descricao="Em caso de empate em pontos o saldo de gols será o critério de desempate."
                                 />
+                                <Legenda
+                                    titulo=""
+                                    descricao="Ao receber uma punição a equipe perde 1 ponto."
+                                />
+                                <Legenda
+                                    titulo=""
+                                    descricao="Pontos recebidos extra partidas só serão contabilizados para o chaveamento final."
+                                />
                             </div>
                         </div>
                     </div>

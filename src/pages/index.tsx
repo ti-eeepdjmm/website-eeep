@@ -18,7 +18,7 @@ export default function Home() {
           <MenuToggle />
       </Cabecalho>
       <Banner inicio={true} />
-      <Secao id="sobre" className='bg-white px-4 py-4 gap-2 md:px-64'>
+      <Secao id="sobre" className='bg-white px-4 py-4 gap-2 md:px-64 md:h-[30rem] md:justify-start'>
         <TextoTitulo titulo='Nossa História' />
         <CardSobre />
       </Secao>
